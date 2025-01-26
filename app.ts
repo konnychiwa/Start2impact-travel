@@ -150,18 +150,18 @@ class City implements ICity {
     }
 }
 
-// Istanziazione di oggetti Mezzo
+// Instances of object Vehicles
 const bike1 = new Bike('B1');
 const bike2 = new Bike('B2');
 const scooter1 = new ElectricScooter('S1');
 const scooter2 = new ElectricScooter('S2');
 const moped1 = new Moped('M1');
 
-// Istanziazione di oggetti Utente
-const user1 = new User('Alice', 'Smith', 'alice.smith@example.com', 'Credit Card');
-const user2 = new User('Bob', 'Johnson', 'bob.johnson@example.com', 'PayPal');
+// Instances of object Users
+const user1 = new User('Batman', 'Wayne', 'batman.wayne@example.com', 'Credit Card');
+const user2 = new User('Robin', 'Grayson', 'robin.grayson@example.com', 'PayPal');
 
-// Creazione di una città e aggiunta dei mezzi
+// Creation of a new city and adding vehicles
 const Milan = new City('Milan');
 Milan.addVehicle(bike1);
 Milan.addVehicle(bike2);
@@ -171,12 +171,12 @@ Milan.addVehicle(moped1);
 
 // Test della logica di prenotazione
 console.log('--- Testing bookings ---');
-user1.bookVehicle(bike1); // Prenotazione riuscita
-user2.bookVehicle(bike1); // Fallisce perché già occupato
-bike1.releaseUser(); // Il veicolo viene liberato
-user2.bookVehicle(bike1); // Prenotazione riuscita
+user1.bookVehicle(bike1); // Booking succesful
+user2.bookVehicle(bike1); // Failed because already busy
+bike1.releaseUser(); // The vehicle is now awailable
+user2.bookVehicle(bike1); // Booking succesful
 
-// Aggiunta di un nuovo veicolo
+// Added a new vehicle
 const bike3 = new Bike('B3');
 Milan.addVehicle(bike3);
 
