@@ -105,6 +105,7 @@ class Moped implements IVehicle {
     releaseUser(): void {
         if (this.status === 'busy') {
             this.status = 'available';
+            console.log(`Vehicle ${this.id} is now available.`);
             this.currentUser = undefined;
         }
     }
